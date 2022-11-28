@@ -2,18 +2,26 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 def check_prime(num):
-    for i in range(2,int(num/2)):
-        if (num%i) == 0:
-            return False
-    return True
+    if num > 1:
+        for i in range(2, num):
+            if (num%i) == 0:
+                return False
+        return True
+    else:
+        return False
 
 def primes(number_of_primes):
     list = []
-    j = 2
-    for i in range(number_of_primes):
-        while not check_prime(j):
-            j = j + 1
-        else:
-            list.append(j)
 
+    j = 0
+    
+    while len(list) < (number_of_primes):
+        if check_prime(j):
+            list.append(j)
+        
+        j = j+1
+
+              
     return list
+
+print(primes(4))
