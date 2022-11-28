@@ -11,10 +11,12 @@ def check_prime(num):
 
 def primes(number_of_primes):
     list = []
-    while len(list) < number_of_primes:
-        i = 1
-        if check_prime(i):
-            list.append(i)
-        i = i + 1
+    while len(list) < int(number_of_primes):
+        j = 2
+        if check_prime(j):
+            list.append(j)
+        j = j + 1
+    else:
+        return list
         
-    return list
+    #return list
